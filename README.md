@@ -46,6 +46,8 @@ DEVELOPMENT APPROACH – The project was designed and prototyped using Figma and
 9. Viewing in dark theme
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4965a618-4ffe-4a41-bc26-2d47024ab807" />
 
+10. Downloaded Threat Report as txt file
+<img width="1917" height="1017" alt="image" src="https://github.com/user-attachments/assets/c8321123-7be1-4b72-947d-c5be996384ca" />
 
 
 
