@@ -1,0 +1,24 @@
+From: Security Desk <alerts@security-paypal-login.xyz>
+To: target@victim.com
+Reply-To: refund-desk@gmail.com
+Subject: FINAL WARNING: Immediate Action Required - Account Suspended Within 24 Hours
+Date: Mon, 10 Sep 2026 14:00:00 +0000
+Content-Type: multipart/mixed; boundary="boundary-12345"
+
+--boundary-12345
+Content-Type: text/plain; charset=UTF-8
+
+URGENT NOTICE:
+
+Your account has experienced an unauthorized transaction. Act now! Your account will be closed immediately unless you verify your account credentials within 24 hours.
+
+To avoid immediate cancellation and bank transfer penalties, please pay immediately and confirm your identity at:
+https://tinyurl.com/secure-banking-login-verify
+
+Download the attached billing invoice and execute the security verification:
+--boundary-12345
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="urgent_invoice_payment.pdf.exe"
+
+[Malicious Executable Payload]
+--boundary-12345--
