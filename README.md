@@ -17,6 +17,9 @@ REQUIREMENTS - Project requirements:
 
 DEVELOPMENT APPROACH – The project was designed and prototyped using Figma and developed using HTML, CSS and JavaScript. AI-assisted development techniques were used throughout the development process, with Google Antigravity used for agentic coding, code modification and testing. GitHub was used for version control and project management.
 
+Live site link -
+ https://mridula-lab.github.io/SkillLab_MailHunt_Agentic/
+
 #### The following screenshots showcase the key screens of the functional Mail Hunt application developed using agentic coding.
 
 1.  Log In page
@@ -48,7 +51,6 @@ DEVELOPMENT APPROACH – The project was designed and prototyped using Figma and
 
 10. Downloaded Threat Report as txt file
 <img width="1917" height="1017" alt="image" src="https://github.com/user-attachments/assets/c8321123-7be1-4b72-947d-c5be996384ca" />
-
 
 
 
