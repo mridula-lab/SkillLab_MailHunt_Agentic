@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mail Hunt - AI Email Threat Detection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR / NAVIGATION
+    ========================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h1>Mail Hunt</h1>
+                <p>AI Email Threat Detection</p>
+            </div>
+        </div>
+
+
+        <nav>
+
+            <button class="nav-item active" data-screen="login">
+                <span>⌂</span>
+                Login
+            </button>
+
+            <button class="nav-item" data-screen="upload">
+                <span>↑</span>
+                Upload Email
+            </button>
+
+            <button class="nav-item" data-screen="menu">
+                <span>☷</span>
+                Menu
+            </button>
+
+            <button class="nav-item" data-screen="history">
+                <span>◷</span>
+                Scan History
+            </button>
+
+            <button class="nav-item" data-screen="reports">
+                <span>▣</span>
+                Threat Reports
+            </button>
+
+            <button class="nav-item" data-screen="settings">
+                <span>⚙</span>
+                Settings
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <span class="online-dot"></span>
+
+            AI Protection Active
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <button class="menu-button" id="menuButton">
+                ☰
+            </button>
+
+            <div class="topbar-logo">
+                ◇ Mail Hunt
+            </div>
+
+            <div class="protection-status">
+
+                <span class="online-dot"></span>
+
+                Protected
+
+            </div>
+
+        </header>
+
+
+
+        <div class="container">
+
+
+            <!-- =========================
+                 SCREEN 1 - LOGIN
+            ========================== -->
+
+            <section class="screen active" id="login">
+
+                <div class="hero">
+
+                    <div class="shield-logo">
+                        ⬡
+                    </div>
+
+                    <h1>Mail Hunt</h1>
+
+                    <p>
+                        AI powered email threat detection
+                    </p>
+
+                </div>
+
+
+                <div class="card login-card">
+
+                    <h2>Welcome Back</h2>
+
+                    <p class="subtitle">
+                        Sign in to continue to Mail Hunt
+                    </p>
+
+
+                    <form id="loginForm">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+
+                        <label>Password</label>
+
+                        <div class="password-box">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="showPassword"
+                            >
+                                ◉
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Sign In
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="forgot-button"
+                        >
+                            Forgot Password?
+                        </button>
+
+                    </form>
+
+
+                    <p class="signup">
+
+                        Don't have an account?
+
+                        <button class="link-button">
+                            Sign Up
+                        </button>
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 SCREEN 2 - UPLOAD
+            ========================== -->
+
+            <section class="screen" id="upload">
+
+                <div class="page-title">
+
+                    <span>02</span>
+
+                    <div>
+                        <h2>Analyze Your Email</h2>
+
+                        <p>
+                            Upload an email to check for potential threats
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="upload-box">
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+                    <h3>Upload Your Email</h3>
+
+                    <p>
+                        Drag & drop your email file here
+                    </p>
+
+
+                    <input
+                        type="file"
+                        id="emailFile"
+                        accept=".eml,.msg,.txt,.html,.htm"
+                        hidden
+                    >
+
+
+                    <button
+                        class="primary-button browse-button"
+                        id="browseButton"
+                    >
+                        Browse Files
+                    </button>
+
+
+                    <p class="file-info">
+                        Supported: .EML · .MSG · .TXT · .HTML · .HTM
+                    </p>
+
+
+                    <p
+                        id="selectedFile"
+                        class="selected-file"
+                    ></p>
+
+                </div>
+
+
+                <button
+                    class="secondary-button scan-button"
+                    id="scanButton"
+                    disabled
+                >
+                    Scan Email
+                </button>
+
+            </section>
+
+
+
+            <!-- =========================
+                 SCREEN 3 - SCANNING
+            ========================== -->
+
+            <section class="screen" id="scanning">
+
+                <div class="scanning-screen">
+
+                    <div class="scan-logo">
+                        ⬡
+                    </div>
+
+                    <h2>
+                        Analyzing Your Email
+                    </h2>
+
+                    <p>
+                        Scanning
+                        <strong id="scanningFile">
+                            suspicious_email.eml
+                        </strong>
+                    </p>
+
+
+                    <div class="progress-bar">
+
+                        <div class="progress"></div>
+
+                    </div>
+
+
+                    <p
+                        id="scanMessage"
+                        class="scan-message"
+                    >
+                        Checking sender information...
+                    </p>
+
+
+                    <div class="scan-checks">
+
+                        <p id="check1">
+                            ◌ Sender reputation
+                        </p>
+
+                        <p id="check2">
+                            ◌ Suspicious links
+                        </p>
+
+                        <p id="check3">
+                            ◌ Urgent language
+                        </p>
+
+                        <p id="check4">
+                            ◌ Attachments
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 SCREEN 4 - MENU
+            ========================== -->
+
+            <section class="screen" id="menu">
+
+                <div class="page-title">
+
+                    <span>04</span>
+
+                    <div>
+
+                        <h2>Menu</h2>
+
+                        <p>
+                            Manage your Mail Hunt workspace
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="menu-grid">
+
+                    <button
+                        class="menu-card"
+                        data-screen="upload"
+                    >
+
+                        <span>↑</span>
+
+                        <strong>
+                            Upload Your Email
+                        </strong>
+
+                        <small>
+                            Analyze a new email
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="menu-card"
+                        data-screen="history"
+                    >
+
+                        <span>◷</span>
+
+                        <strong>
+                            Scan History
+                        </strong>
+
+                        <small>
+                            View previous scans
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="menu-card"
+                        data-screen="reports"
+                    >
+
+                        <span>▣</span>
+
+                        <strong>
+                            Threat Reports
+                        </strong>
+
+                        <small>
+                            See risk statistics
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="menu-card"
+                        data-screen="settings"
+                    >
+
+                        <span>⚙</span>
+
+                        <strong>
+                            Settings
+                        </strong>
+
+                        <small>
+                            Manage security preferences
+                        </small>
+
+                    </button>
+
+
+                    <button
+                        class="menu-card logout"
+                        data-screen="login"
+                    >
+
+                        <span>↪</span>
+
+                        <strong>
+                            Log Out
+                        </strong>
+
+                        <small>
+                            Return to sign in
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 SCREEN 5 - THREAT RESULT
+            ========================== -->
+
+            <section class="screen" id="result">
+
+                <div class="page-title">
+
+                    <span>05</span>
+
+                    <div>
+
+                        <h2>
+                            Threat Detection Result
+                        </h2>
+
+                        <p>
+                            AI analysis of your uploaded email
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="result-card" id="resultCard">
+
+                    <div class="danger-icon" id="resultIcon">
+                        !
+                    </div>
+
+                    <p class="result-label" id="resultLabel">
+                        THREAT DETECTED
+                    </p>
+
+                    <h2 id="resultHeading">
+                        High Risk!
+                    </h2>
+
+                    <p id="resultFile">
+                        suspicious_email.eml
+                    </p>
+
+                    <div id="riskScoreBox" class="risk-score-box">
+                        <strong id="riskScoreLabel">Risk Score: 86/100</strong>
+                        <div class="js-score-bar">
+                            <div id="riskScoreFill" class="js-score-fill" style="width: 86%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="explanation-card">
+
+                    <h3>
+                        Why was this email flagged?
+                    </h3>
+
+
+                    <ul id="explanationList">
+
+                        <li>
+                            Suspicious sender detected
+                        </li>
+
+                        <li>
+                            Urgent payment request
+                        </li>
+
+                        <li>
+                            Unknown sender domain
+                        </li>
+
+                        <li>
+                            Suspicious attachment
+                        </li>
+
+                    </ul>
+
+                    <div id="indicatorsSection" class="indicators-section">
+                        <h3>Detected Threat Indicators</h3>
+                        <div id="indicatorsList" class="indicators-list"></div>
+                    </div>
+
+                    <div id="technicalResultInfo" class="js-technical-info">
+                        <!-- Filled dynamically by JavaScript -->
+                    </div>
+
+                </div>
+
+
+                <div class="button-row">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="downloadReportButton"
+                    >
+                        Download Threat Report
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="scanAnotherButton"
+                        data-screen="upload"
+                    >
+                        Scan Another
+                    </button>
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        data-screen="history"
+                    >
+                        View History
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 SCREEN 6 - HISTORY
+            ========================== -->
+
+            <section class="screen" id="history">
+
+                <div class="page-title">
+
+                    <span>06</span>
+
+                    <div>
+
+                        <h2>
+                            Scan History
+                        </h2>
+
+                        <p>
+                            Previously analyzed emails
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="historyList">
+
+                    <div class="history-item high">
+
+                        <span class="risk-dot"></span>
+
+                        <div>
+
+                            <strong>
+                                suspicious_email.eml
+                            </strong>
+
+                            <p>
+                                High Risk · Today, 12:42 PM
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="view-button"
+                            data-screen="result"
+                        >
+                            View
+                        </button>
+
+                    </div>
+
+
+                    <div class="history-item suspicious">
+
+                        <span class="risk-dot"></span>
+
+                        <div>
+
+                            <strong>
+                                prize_winner.eml
+                            </strong>
+
+                            <p>
+                                Suspicious · Yesterday, 4:15 PM
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="view-button"
+                            data-screen="result"
+                        >
+                            View
+                        </button>
+
+                    </div>
+
+
+                    <div class="history-item safe">
+
+                        <span class="risk-dot"></span>
+
+                        <div>
+
+                            <strong>
+                                meeting_invite.eml
+                            </strong>
+
+                            <p>
+                                Safe · Sep 8, 10:20 AM
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="view-button"
+                            data-screen="result"
+                        >
+                            View
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div id="clearHistoryContainer" class="clear-history-container">
+                    <button
+                        type="button"
+                        id="clearHistoryButton"
+                        class="secondary-button"
+                    >
+                        Clear Scan History
+                    </button>
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 SCREEN 7 - REPORTS
+            ========================== -->
+
+            <section class="screen" id="reports">
+
+                <div class="page-title">
+
+                    <span>07</span>
+
+                    <div>
+
+                        <h2>
+                            Threat Reports
+                        </h2>
+
+                        <p>
+                            Overview of detected email threats
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stats">
+
+                    <div class="stat-card">
+
+                        <strong id="emailsScanned">
+                            24
+                        </strong>
+
+                        <span>
+                            Emails Scanned
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <strong id="threatsDetected">
+                            7
+                        </strong>
+
+                        <span>
+                            Threats Detected
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <h3>
+                        Risk Breakdown
+                    </h3>
+
+
+                    <div class="risk-row">
+
+                        <span>
+                            🔴 High Risk
+                        </span>
+
+                        <strong id="statHigh">
+                            3
+                        </strong>
+
+                    </div>
+
+
+                    <div class="risk-row">
+
+                        <span>
+                            🟡 Suspicious
+                        </span>
+
+                        <strong id="statSuspicious">
+                            2
+                        </strong>
+
+                    </div>
+
+
+                    <div class="risk-row">
+
+                        <span>
+                            🟢 Safe
+                        </span>
+
+                        <strong id="statSafe">
+                            2
+                        </strong>
+
+                    </div>
+
+                    <div id="riskChart"></div>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <h3>
+                        Recent Threats
+                    </h3>
+
+                    <div id="recentThreatsList">
+
+                        <div class="risk-row">
+
+                            <span>
+                                🔴 Payment Request
+                            </span>
+
+                            <strong>
+                                High Risk
+                            </strong>
+
+                        </div>
+
+
+                        <div class="risk-row">
+
+                            <span>
+                                🔴 Suspicious Link
+                            </span>
+
+                            <strong>
+                                High Risk
+                            </strong>
+
+                        </div>
+
+
+                        <div class="risk-row">
+
+                            <span>
+                                🟡 Phishing Sender
+                            </span>
+
+                            <strong>
+                                Suspicious
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 SCREEN 8 - SETTINGS
+            ========================== -->
+
+            <section class="screen" id="settings">
+
+                <div class="page-title">
+
+                    <span>08</span>
+
+                    <div>
+
+                        <h2>
+                            Settings
+                        </h2>
+
+                        <p>
+                            Manage your preferences
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <h3>
+                        Account
+                    </h3>
+
+                    <p id="accountEmail">
+                        user@email.com
+                    </p>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <h3>
+                        Security Preferences
+                    </h3>
+
+
+                    <label class="setting">
+
+                        <span>
+                            Threat Alerts
+                        </span>
+
+                        <input
+                            type="checkbox"
+                            id="settingAlerts"
+                            checked
+                        >
+
+                    </label>
+
+
+                    <label class="setting">
+
+                        <span>
+                            Auto-Scan Emails
+                        </span>
+
+                        <input
+                            type="checkbox"
+                            id="settingAutoScan"
+                            checked
+                        >
+
+                    </label>
+
+
+                    <label class="setting">
+
+                        <span>
+                            Suspicious Link Warnings
+                        </span>
+
+                        <input
+                            type="checkbox"
+                            id="settingLinkWarnings"
+                            checked
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <h3>
+                        App Preferences
+                    </h3>
+
+
+                    <label class="setting">
+
+                        <span>
+                            Language
+                        </span>
+
+                        <select id="settingLanguage">
+
+                            <option value="English">
+                                English
+                            </option>
+
+                            <option value="Hindi">
+                                Hindi
+                            </option>
+
+                            <option value="Tamil">
+                                Tamil
+                            </option>
+
+                        </select>
+
+                    </label>
+
+
+                    <label class="setting">
+
+                        <span>
+                            Theme
+                        </span>
+
+                        <select id="themeSelect">
+
+                            <option value="light">
+                                Light
+                            </option>
+
+                            <option value="dark">
+                                Dark
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+
+                <p class="version">
+                    Mail Hunt v1.0<br>
+                    AI-Powered Email Threat Detection
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <div
+        id="toast"
+        class="toast"
+    ></div>
+
+
+    <!-- =========================
+         DEMO MODALS
+    ========================== -->
+
+    <!-- Sign Up Modal (Demo) -->
+    <div id="signupModal" class="modal-backdrop" hidden>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Create Demo Account</h3>
+                <button type="button" class="modal-close-btn" id="closeSignupModal">✕</button>
+            </div>
+            <p class="subtitle">Quickly create a local prototype account to explore Mail Hunt.</p>
+            <form id="signupForm">
+                <label>Email Address</label>
+                <input type="email" id="signupEmail" placeholder="e.g. analyst@security.io" required>
+                <label>Password</label>
+                <input type="password" id="signupPassword" placeholder="Choose a password" required>
+                <div class="modal-actions">
+                    <button type="button" class="secondary-button" id="cancelSignupBtn">Cancel</button>
+                    <button type="submit" class="primary-button">Register & Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal (Demo) -->
+    <div id="forgotModal" class="modal-backdrop" hidden>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Reset Password</h3>
+                <button type="button" class="modal-close-btn" id="closeForgotModal">✕</button>
+            </div>
+            <p class="subtitle">Enter your email to receive simulated password recovery instructions.</p>
+            <form id="forgotForm">
+                <label>Registered Email</label>
+                <input type="email" id="forgotEmail" placeholder="Enter your email" required>
+                <div class="modal-actions">
+                    <button type="button" class="secondary-button" id="cancelForgotBtn">Cancel</button>
+                    <button type="submit" class="primary-button">Send Reset Link</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
