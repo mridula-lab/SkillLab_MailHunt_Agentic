@@ -17,7 +17,7 @@ REQUIREMENTS - Project requirements:
 
 DEVELOPMENT APPROACH – The project was designed and prototyped using Figma and developed using HTML, CSS and JavaScript. AI-assisted development techniques were used throughout the development process, with Google Antigravity used for agentic coding, code modification and testing. GitHub was used for version control and project management.
 
-## The following screenshots showcase the key screens of the functional Mail Hunt application developed using agentic coding.
+#### The following screenshots showcase the key screens of the functional Mail Hunt application developed using agentic coding.
 
 1.  Log In page
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e25b632e-a636-45fb-9c78-e2f9496615eb" />
