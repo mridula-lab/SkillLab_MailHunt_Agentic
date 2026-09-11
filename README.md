@@ -30,7 +30,7 @@ Images of the pages of the site it attached below.
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/35183e3c-3b92-4e66-80ea-3c69be9f906b" />
 
 5. Threat Detection Result continuation
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dd5df83c-df3a-4914-8df3-b1b3a9012145" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b182d2cf-512e-4296-9f18-3f9bd1c7b129" />
 
 6. Scan History
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8f2eebb6-c346-4bea-bb29-5eba78fb98b3" />
